@@ -60,7 +60,7 @@ app.get("/health", (req, res) => {
 });
 
 // Routes
-// app.use("/api", require("./routes/authRouter"));
+app.use("/api", require("./routes/authRouter"));
 
 
 // MongoDB connection
