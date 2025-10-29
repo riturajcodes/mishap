@@ -1,5 +1,4 @@
-// models/RiskAssessment.model.js
-import mongoose from "mongoose";
+const mongoose = require("mongoose")
 
 const RiskAssessmentSchema = new mongoose.Schema({
   zone: {
@@ -63,4 +62,4 @@ const RiskAssessmentSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.model("RiskAssessment", RiskAssessmentSchema);
+module.exports = mongoose.model("RiskAssessment", RiskAssessmentSchema);

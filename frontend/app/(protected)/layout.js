@@ -5,11 +5,12 @@ const layout = ({ children }) => {
     return (
         <>
             <ProtectedRoute>
-                <div>
+                <div className="layout">
                     <Sidebar />
-                    {children}
+                    <div className="layout_main">
+                        {children}
+                    </div>
                 </div>
-
             </ProtectedRoute>
         </>
     );

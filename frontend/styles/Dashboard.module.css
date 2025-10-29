@@ -1,0 +1,104 @@
+.dash {
+    position: relative;
+}
+
+.dash_tile {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 400px;
+    height: 90%;
+    z-index: 500;
+    background: #000000aa;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.risk_list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.risk_card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 14px;
+    transition: 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.risk_card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+.risk_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.risk_level {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.high {
+    background: rgba(255, 0, 0, 0.2);
+    color: #ff5b5b;
+}
+
+.medium {
+    background: rgba(255, 200, 0, 0.2);
+    color: #ffca00;
+}
+
+.low {
+    background: rgba(0, 255, 150, 0.2);
+    color: #00ff88;
+}
+
+.detectedAt {
+    font-size: 0.75rem;
+    opacity: 0.65;
+    margin-top: 6px;
+}
+
+.tile_header h2 {
+    font-size: 2.4rem;
+}
+
+.tile_header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mitigate_btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.4rem;
+    border: none;
+    cursor: pointer;
+}
+
+.risk_list p {
+    font-size: 1.4rem;
+}
+
+.risk_list span {
+    font-size: 1.4rem;
+}
+
+.risk_list b {
+    font-size: 1.4rem;
+}

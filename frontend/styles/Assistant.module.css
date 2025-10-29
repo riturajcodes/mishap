@@ -1,0 +1,212 @@
+.assistant {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    height: 100vh;
+    background: #0d1117;
+    /* Darker, GitHub-like background */
+    color: #e6edf3;
+    /* High-contrast light text */
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    /* Prevent body scroll */
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    border-right: 1px solid #21262d;
+    /* Subtle dark border */
+    background: #161b22;
+    /* Slightly lighter sidebar background */
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.sidebar p {
+    font-size: 1.6rem;
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #58a6ff;
+    /* Blue accent color */
+}
+
+.logoIcon {
+    font-size: 1.5rem;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #8b949e;
+    /* Muted description text */
+    line-height: 1.5;
+}
+
+.examples {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #21262d;
+}
+
+.examples h3 {
+    font-size: 1.8rem;
+    color: #8b949e;
+    margin-bottom: 0.5rem;
+}
+
+.examples ul {
+    list-style: none;
+    /* Removing disc style */
+    padding-left: 0;
+    margin: 0;
+}
+
+.examples li {
+    margin-bottom: 0.4rem;
+    font-size: 1.85rem;
+    color: #c9d1d9;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.examples li::before {
+    content: "•";
+    color: #58a6ff;
+    font-size: 1.1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* --- Chat Area --- */
+.chatArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    overflow-y: auto;
+}
+
+.messages {
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+    padding-bottom: 1rem;
+    /* Custom scrollbar for dark theme */
+    scrollbar-width: thin;
+    scrollbar-color: #30363d #0d1117;
+}
+
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background: #0d1117;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: #30363d;
+    border-radius: 4px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
+    /* More rounded corners */
+    margin-bottom: 1.2rem;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+/* Fix for preserving LLM output formatting (newlines, lists, indentation, etc.) */
+.messageContent {
+    white-space: pre-wrap;
+}
+
+.messageContent p {
+    margin: 0;
+    font-size: 1.6rem;
+    line-height: 2;
+    /* Remove default margin from paragraphs within the message */
+}
+
+.assistantMsg {
+    background: #161b22;
+    /* Darker background for assistant */
+    border: 1px solid #30363d;
+    align-self: flex-start;
+    border-top-left-radius: 4px;
+    /* Pointed corner */
+}
+
+.user {
+    background: #1f6feb20;
+    /* Subtle blue tint for user */
+    border: 1px solid #1f6feb40;
+    align-self: flex-end;
+    border-top-right-radius: 4px;
+    /* Pointed corner */
+}
+
+.loadingMsg {
+    color: #58a6ff;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+
+/* --- Input Bar --- */
+.inputBar {
+    display: flex;
+    align-items: center;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    padding: 0.75rem;
+    gap: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    margin-top: 1rem;
+}
+
+.inputBar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #e6edf3;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.inputBar button {
+    background: #58a6ff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: 0.2s;
+    box-shadow: 0 2px 8px rgba(88, 166, 255, 0.3);
+}
+
+.inputBar button:hover {
+    background: #3982e9;
+    box-shadow: 0 2px 10px rgba(88, 166, 255, 0.5);
+}
+
+.inputBar button:disabled {
+    background: #30363d;
+    cursor: not-allowed;
+    box-shadow: none;
+}

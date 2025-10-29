@@ -41,3 +41,13 @@ a {
     color-scheme: dark;
   }
 }
+
+.layout {
+  display: flex;
+}
+
+.layout_main {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+}

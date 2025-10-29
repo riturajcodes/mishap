@@ -61,6 +61,8 @@ app.get("/health", (req, res) => {
 
 // Routes
 app.use("/api", require("./routes/authRouter"));
+app.use("/api", require("./routes/zoneRouter"));
+app.use("/api", require("./routes/assistantRouter"));
 
 
 // MongoDB connection

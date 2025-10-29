@@ -1,8 +1,7 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
-const PipelineSchema = new mongoose.Schema(
+const LineSchema = new mongoose.Schema(
   {
-    owner: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
     zone: { type: mongoose.Schema.Types.ObjectId, ref: "Zone", required: true },
     name: { type: String, required: true },
     lineType: {
@@ -15,9 +14,7 @@ const PipelineSchema = new mongoose.Schema(
     material: String,
     pressureRating: Number,
     temperatureRating: Number,
-
     sensors: [{ type: mongoose.Schema.Types.ObjectId, ref: "Sensor" }],
-
     leakDetected: { type: Boolean, default: false },
     corrosionStatus: {
       type: String,
@@ -30,4 +27,4 @@ const PipelineSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Pipeline", PipelineSchema);
+module.exports = mongoose.model("Line", LineSchema);

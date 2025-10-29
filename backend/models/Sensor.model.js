@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const SensorSchema = new mongoose.Schema(
   {
@@ -25,9 +25,13 @@ const SensorSchema = new mongoose.Schema(
 
     zone: { type: mongoose.Schema.Types.ObjectId, ref: "Zone" },
     tank: { type: mongoose.Schema.Types.ObjectId, ref: "Tank" },
-    pipeline: { type: mongoose.Schema.Types.ObjectId, ref: "Pipeline" },
+    line: { type: mongoose.Schema.Types.ObjectId, ref: "Line" }, // 🔄 changed from pipeline → line
 
-    status: { type: String, enum: ["Active", "Inactive", "Faulty"], default: "Active" },
+    status: {
+      type: String,
+      enum: ["Active", "Inactive", "Faulty"],
+      default: "Active",
+    },
     batteryLevel: Number,
     signalStrength: Number,
     calibrationDate: Date,
@@ -36,4 +40,4 @@ const SensorSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Sensor", SensorSchema);
+module.exports = mongoose.model("Sensor", SensorSchema);
