@@ -10,7 +10,7 @@ const isProduction = process.env.NODE_ENV === "production";
 
 // List of allowed origins
 const allowedOrigins = isProduction
-    ? ["https://mishap.onrender.com"]
+    ? ["https://mishap.vercel.app"]
     : [
         "http://localhost:3000",
     ];
